@@ -1,0 +1,54 @@
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 30px 0;
+    display: flex;
+    height:100vh;
+    width:100vw;
+    flex-direction: column;
+          background-color: #d3ddc4;
+    align-items:center
+  }
+h1{
+    color:#fff;
+}
+  .Login form {
+    /* margin: 0 auto; */
+display: flex;
+align-items: center;
+flex-direction: column;
+    min-width: 60vw;
+    max-width: 20vw;
+    height: 50vh;
+    justify-content: space-around;
+
+  }
+  .dv_email{
+      margin: 0.3cm;
+      padding: 15px;
+      justify-content: space-between;
+
+  }
+  .submit{
+padding: 5px;
+width: 80px;
+height: 30px;
+background-color:#19d119;
+color: honeydew;
+  }
+  label.form-label {
+    font-size: large;
+    color: white;
+    padding: 5px;
+    margin: 10px;
+}
+.inputs{
+  
+        border: none;
+        width: 190px;
+        padding: 5px;
+        justify-content: center;
+        /* align-items: center; */
+        align-self: center;
+ 
+}
+}
