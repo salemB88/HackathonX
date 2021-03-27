@@ -1,0 +1,37 @@
+﻿div.fount {
+	font-family: Arial;
+	font-size: 50px;
+}
+
+#containers {
+	margin: 50px 0 0 0;
+	text-align: center;
+}
+
+#text {
+	display: inline-block;
+	color: #2980b9;
+	border-right: 3px solid #2980b9;
+}
+
+#divText{
+    background-color: black;
+    /* rgb is contain of hyper coloe (red,green ,blu) */
+    background-color: rgb(255 150 15 );
+    background-color: #FF0000 / 15;
+    /* background-image: url("he1.jpeg"); */
+  
+  background-repeat:no-repeat;
+    border-radius: 10px;
+    width: 50%;
+    height: 50%;
+    /* background-attachment: fixed; */
+    background-position: center top;
+    /* background-position: 50% 50%; */
+  background-size:contain ;
+  /* top, right, bottom, left */
+  padding: 10px ; 
+  /* padding-bottom: 10px; */
+  /* margin-left: 25%; */
+  margin: auto;
+  }
