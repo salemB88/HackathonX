@@ -1,6 +1,6 @@
 // import Routes from './Routes.js';
 import './App.css';
-import LogUp from "./containers/LogUp";
+import LogUp from "./containers/LogUp.js";
 
 function App() {
   return ( 

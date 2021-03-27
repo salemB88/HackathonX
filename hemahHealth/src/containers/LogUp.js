@@ -32,7 +32,7 @@ export default function LogUp() {
         email:userEmail,
         password:userPassword
       };
-    
+     setisLogin(!isLogin)
       // post 
      axios.post('http://127.0.0.1:8000/api/signup', userData)
        .then(res => {
@@ -41,18 +41,18 @@ export default function LogUp() {
             const user = responseData.user; 
             console.log(user); 
             // replace screen
-            setisLogin(true)
+           // #update    setisLogin(true)
             return user;
           
           } else {
-            alert('Something went wrong while creating account')
+            alert('الرجاء تاكد من صحة المدخلات ');
           }
        })
   }
   post()
   //  if end !isLogin && validateForm
 }
-alert('الرجاء تاكد من صحة المدخلات ');
+
   }
 
   return (
@@ -65,6 +65,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
           <Form.Control
           className='inputs'
             autoFocus
+            placeholder='Omar'
             type="name"
             value={userName}
             onChange={(e) =>{
@@ -76,6 +77,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
           <Form.Label>    Email      </Form.Label>
           <Form.Control
           className='inputs'
+          placeholder='omar@gmail.com'
             type="email"
             value={userEmail}
             onChange={(e) =>{
@@ -87,6 +89,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
           <Form.Label>   Password   </Form.Label>
           <Form.Control
              className='inputs'
+             placeholder='***'
             type="password"
             value={userPassword}
             onChange={(e) =>{ let ps=e.target.value; set_password(ps)}}
@@ -97,11 +100,8 @@ alert('الرجاء تاكد من صحة المدخلات ');
           Sign Up 
         </Button>
       </Form>:<Login/>}
-      <div className="switcher" onClick={()=>setisLogin(!isLogin)}><h6 >{!isLogin ? 'Sin in': 'Sin up'}</h6>  </div>
+      <div className="switcher" onClick={()=>{setisLogin(!isLogin); }}><h4 >{!isLogin ? 'Sin in': 'Sin up'}</h4>  </div>
     </div>
   );
 }
 
-// fetch('https://jsonplaceholder.typicode.com/todos/1')
-//   .then(response => response.json())
-//   .then(json => console.log(json))

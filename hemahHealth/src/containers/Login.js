@@ -72,6 +72,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
           <Form.Label>    Email      </Form.Label>
           <Form.Control
           className='inputs'
+          placeholder="omar@gmail.com"
             type="email"
             value={userEmail}
             autoFocus
@@ -90,7 +91,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
           />
         </Form.Group>
       
-        <Button block size="lg" type="submit"  className='submit' onClick={handleSubmit} variant="outlined" color="primary">
+        <Button block size="lg" type="submit"  className='submit' onClick={handleSubmit} color="primary">
           Login
         </Button>
       </Form>
