@@ -5,9 +5,10 @@ import { Form } from 'react-bootstrap';
 import { Button } from '@material-ui/core';
 import axios from 'axios';
 import "./Login.css";
-
-
-
+import { BrowserRouter as Router ,Route,Switch,Link} from 'react-router-dom';
+import Home from './pages/Home'
+import LogUp from './LogUp.js'
+import logo from '../img/logo.jpg';
 export default function Login() {
   const [userName, set_name] = useState('')
   const [userPassword, set_password] = useState('')
@@ -63,12 +64,25 @@ export default function Login() {
 alert('الرجاء تاكد من صحة المدخلات ');
   }
   return (
+    <>
+   <header>
+    <ul className='navigatorList'>
+    <div className='header-logo'><img src={logo} alt="Logo" /></div>
+    {/* #update */}
+    {true==1?<li >Home</li>:''}
+     {/* #update */}
+    <li>Log Up</li>
+    </ul>
+   </header>
 
-  
-      <Form>  
-      <h1>Log in </h1>
-     
-        <Form.Group size="lg" controlId="email" className='dv_email'>
+    
+
+   
+
+
+
+   {true==0 ?<Form>  <h1>Log in </h1>
+        <Form.Group controlId="email" className='dv_email'>
           <Form.Label>    Email      </Form.Label>
           <Form.Control
           className='inputs'
@@ -81,7 +95,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
                 set_email(em)}}
           />
         </Form.Group>
-        <Form.Group size="lg" controlId="password">
+        <Form.Group  controlId="password">
           <Form.Label>   Password   </Form.Label>
           <Form.Control
              className='inputs'
@@ -91,11 +105,12 @@ alert('الرجاء تاكد من صحة المدخلات ');
           />
         </Form.Group>
       
-        <Button block size="lg" type="submit"  className='submit' onClick={handleSubmit} color="primary">
+        <Button  type="submit"  className='submit' onClick={handleSubmit} color="primary">
           Login
         </Button>
-      </Form>
- 
+
+      </Form>:<Home/>}
+    </>
   );
 }
 
