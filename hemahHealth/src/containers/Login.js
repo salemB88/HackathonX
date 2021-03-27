@@ -1,12 +1,11 @@
 import React, { useState,useEffect } from "react";
 // import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
-import { Button,Form } from 'react-bootstrap';
-// import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios';
+import { Form } from 'react-bootstrap';
+import { Button } from '@material-ui/core';
 import axios from 'axios';
 import "./Login.css";
-// import Button from 'react-bootstrap/Button';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 export default function Login() {
@@ -14,7 +13,7 @@ export default function Login() {
   const [userPassword, set_password] = useState('')
   const [userEmail, set_email] = useState('');
 
-  const [isLogin, setisLogin] = useState(false);
+  const [isLogin, setisLogin] = useState(true);
 
 //   useEffect(() => {
 
@@ -23,8 +22,10 @@ export default function Login() {
 // }, []);
   function validateForm() {
     console.log(userName,userPassword,userEmail)
-  console.log(userName  > 0 && userPassword  > 0 &&userEmail > 0 )
-    return  userName && userPassword && userEmail
+  console.log( userPassword &&userEmail  );
+  if(  userPassword  && userEmail)
+     return true ;
+   
   }
 
   function handleSubmit(event) {
@@ -32,7 +33,7 @@ export default function Login() {
     // state  false and form return true Login ; 
     if ( validateForm()){
       alert('تم تسجيل بنجاح');
-     
+    window.location.href='/Home'
      const post =()=>{
 
       const userData={
@@ -48,7 +49,7 @@ export default function Login() {
             const user = responseData.user; 
             console.log(user); 
             // replace screen
-            setisLogin(false)
+            // setisLogin(false) onClick={event =>  window.location.href='/your-href'} #update
             return user;
           
           } else {
@@ -56,7 +57,7 @@ export default function Login() {
           }
        })
   }
-  post()
+  // post() #update
   //  if end !isLogin && validateForm
 }
 alert('الرجاء تاكد من صحة المدخلات ');
@@ -89,7 +90,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
           />
         </Form.Group>
       
-        <Button block size="lg" type="submit"  className='submit' onClick={handleSubmit}>
+        <Button block size="lg" type="submit"  className='submit' onClick={handleSubmit} variant="outlined" color="primary">
           Login
         </Button>
       </Form>

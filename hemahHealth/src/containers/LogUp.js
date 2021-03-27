@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button,Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import { Button,Switch } from '@material-ui/core';
 // import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios';
 import axios from 'axios';
 import "./Login.css";
@@ -56,9 +57,9 @@ alert('الرجاء تاكد من صحة المدخلات ');
 
   return (
    <div className="Login" >
-  
-     { isLogin ?<Form>  
-      <h1>sign up</h1>
+   
+     { !isLogin ?<Form>  
+      <h1 color="primary">sign up</h1>
       <Form.Group size="lg" controlId="name" className='dv_email'>
           <Form.Label>    First Name      </Form.Label>
           <Form.Control
@@ -91,11 +92,12 @@ alert('الرجاء تاكد من صحة المدخلات ');
             onChange={(e) =>{ let ps=e.target.value; set_password(ps)}}
           />
         </Form.Group>
-        <h1>Here: {userName}</h1>
-        <Button block size="lg" type="submit"  className='submit' onClick={handleSubmit}>
-          Login
+     
+        <Button block size="lg" type="submit"  className='submit' onClick={handleSubmit} variant="outlined" color="primary">
+          Sign Up 
         </Button>
       </Form>:<Login/>}
+      <div className="switcher" onClick={()=>setisLogin(!isLogin)}><h6 >{!isLogin ? 'Sin in': 'Sin up'}</h6>  </div>
     </div>
   );
 }
