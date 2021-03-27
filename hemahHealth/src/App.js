@@ -1,10 +1,11 @@
 // import Routes from './Routes.js';
 import './App.css';
-import Login from "./containers/Login";
+import LogUp from "./containers/LogUp";
+
 function App() {
   return ( 
     <div className="App">
-   <Login/>
+   <LogUp/>
     </div>
    
   );
