@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button,Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import { Button,Switch } from '@material-ui/core';
 // import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios';
 import axios from 'axios';
 import "./Login.css";
@@ -31,7 +32,7 @@ export default function LogUp() {
         email:userEmail,
         password:userPassword
       };
-    
+     setisLogin(!isLogin)
       // post 
      axios.post('http://127.0.0.1:8000/api/signup', userData)
        .then(res => {
@@ -40,30 +41,31 @@ export default function LogUp() {
             const user = responseData.user; 
             console.log(user); 
             // replace screen
-            setisLogin(true)
+           // #update    setisLogin(true)
             return user;
           
           } else {
-            alert('Something went wrong while creating account')
+            alert('الرجاء تاكد من صحة المدخلات ');
           }
        })
   }
   post()
   //  if end !isLogin && validateForm
 }
-alert('الرجاء تاكد من صحة المدخلات ');
+
   }
 
   return (
    <div className="Login" >
-  
-     { isLogin ?<Form>  
-      <h1>sign up</h1>
+   
+     { !isLogin ?<Form>  
+      <h1 color="primary">sign up</h1>
       <Form.Group size="lg" controlId="name" className='dv_email'>
           <Form.Label>    First Name      </Form.Label>
           <Form.Control
           className='inputs'
             autoFocus
+            placeholder='Omar'
             type="name"
             value={userName}
             onChange={(e) =>{
@@ -75,6 +77,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
           <Form.Label>    Email      </Form.Label>
           <Form.Control
           className='inputs'
+          placeholder='omar@gmail.com'
             type="email"
             value={userEmail}
             onChange={(e) =>{
@@ -86,20 +89,19 @@ alert('الرجاء تاكد من صحة المدخلات ');
           <Form.Label>   Password   </Form.Label>
           <Form.Control
              className='inputs'
+             placeholder='***'
             type="password"
             value={userPassword}
             onChange={(e) =>{ let ps=e.target.value; set_password(ps)}}
           />
         </Form.Group>
-        <h1>Here: {userName}</h1>
-        <Button block size="lg" type="submit"  className='submit' onClick={handleSubmit}>
-          Login
+     
+        <Button block size="lg" type="submit"  className='submit' onClick={handleSubmit} variant="outlined" color="primary">
+          Sign Up 
         </Button>
       </Form>:<Login/>}
+      <div className="switcher" onClick={()=>{setisLogin(!isLogin); }}><h4 >{!isLogin ? 'Sin in': 'Sin up'}</h4>  </div>
     </div>
   );
 }
 
-// fetch('https://jsonplaceholder.typicode.com/todos/1')
-//   .then(response => response.json())
-//   .then(json => console.log(json))

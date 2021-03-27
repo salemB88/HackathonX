@@ -1,5 +1,19 @@
-@media all and (min-width: 480px) {
+
+  .switcher h4{
+ cursor: pointer;
+ color:brown;
+
+  }
+  .switcher h4:hover{
+    color:#00f !important;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.459);
+    padding: 3px;
+    border-radius: 3px;
+   }
   .Login {
+    background-image: url("../img/health.jpg");
+    background-color: #cccccc;
     padding: 30px 0;
     display: flex;
     height:100vh;
@@ -9,7 +23,7 @@
     align-items:center
   }
 h1{
-    color:#fff;
+    color:#3f50b5;
 }
   .Login form {
     /* margin: 0 auto; */
@@ -29,15 +43,12 @@ flex-direction: column;
 
   }
   .submit{
-padding: 5px;
-width: 80px;
-height: 30px;
-background-color:#19d119;
-color: honeydew;
+    background-color: #ffffff85;
+    margin: 0.5 cm;
   }
   label.form-label {
     font-size: large;
-    color: white;
+    color: rgb(37, 85, 219);
     padding: 5px;
     margin: 10px;
 }
@@ -51,4 +62,4 @@ color: honeydew;
         align-self: center;
  
 }
-}
+/* submit btn  */
