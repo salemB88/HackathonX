@@ -4,32 +4,9 @@
  color:brown;
 
   }
-  .navigatorList{
-    list-style: none;
-    margin:  0;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 22px;
-    /* justify-content: center; */
-    background-color: #1a3d85;
-   font-style: normal;
-  }
-  .navigatorList li {
-    padding: 7px;
-   margin-left: 1 cm;
-    color: #fff;
-  }
-  .header-logo img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    margin: 2px;
-   padding: 5px;
-    }
+  
+ 
+
   .switcher h4:hover{
     color:#00f !important;
     font-size: 18px;

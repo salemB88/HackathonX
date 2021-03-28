@@ -59,7 +59,8 @@ export default function LogUp() {
 
   return (
    <div className="Login" >
-  { !isLogin ? <Form>  
+   {/* { !isLogin ? */}
+   <Form>  
       <h1 color="primary">sign up</h1>
       <Form.Group size="lg" controlId="name" className='dv_email'>
           <Form.Label>    First Name      </Form.Label>
@@ -100,7 +101,7 @@ export default function LogUp() {
         <Button   type="submit"  className='submit' onClick={handleSubmit} variant="outlined" color="primary">
           Sign Up 
         </Button>
-      </Form>:<Login/>}
+      </Form>
       <div className="switcher" onClick={()=>{setisLogin(!isLogin); }}><h4 >{!isLogin ? 'Sin in': 'Sin up'}</h4>  </div>
       </div>
   );

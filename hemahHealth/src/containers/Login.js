@@ -6,9 +6,8 @@ import { Button } from '@material-ui/core';
 import axios from 'axios';
 import "./Login.css";
 import { BrowserRouter as Router ,Route,Switch,Link} from 'react-router-dom';
-import Home from './pages/Home'
-import LogUp from './LogUp.js'
-import logo from '../img/logo.jpg';
+
+
 export default function Login() {
   const [userName, set_name] = useState('')
   const [userPassword, set_password] = useState('')
@@ -65,23 +64,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
   }
   return (
     <>
-   <header>
-    <ul className='navigatorList'>
-    <div className='header-logo'><img src={logo} alt="Logo" /></div>
-    {/* #update */}
-    {true==1?<li >Home</li>:''}
-     {/* #update */}
-    <li>Log Up</li>
-    </ul>
-   </header>
-
-    
-
-   
-
-
-
-   {true==0 ?<Form>  <h1>Log in </h1>
+<Form>  <h1>Log in </h1>
         <Form.Group controlId="email" className='dv_email'>
           <Form.Label>    Email      </Form.Label>
           <Form.Control
@@ -109,7 +92,7 @@ alert('الرجاء تاكد من صحة المدخلات ');
           Login
         </Button>
 
-      </Form>:<Home/>}
+      </Form>
     </>
   );
 }
