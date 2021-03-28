@@ -5,14 +5,17 @@ import Home from "./containers/Home.js";
 import LogUp from "./containers/LogUp.js";
 import Footer from "./containers/Footer.js";
 import Login from "./containers/Login";
+import './containers/Header.css';
+import "./containers/Login.css";
 import { BrowserRouter as Router ,Route,Switch,Link} from 'react-router-dom';
 function App() {
   return ( 
     <div className="App">
       <Router><Header/>
-  <Route path='/' render={(prpos)=>{return(<><Home/></>)}}/>
-  <Route path='/Login'render={(prpos)=>{return(<><Login/></>)}}/>
-    <Route path='/LogUp'render={(prpos)=>{return(<><LogUp/></>)}}/>
+  <Route exact path="/" ><Home/></Route>
+  <Route exact path="/Login" ><Login/></Route>
+  <Route exact path="/LogUp" ><LogUp/></Route>
+ 
    <Footer/></Router>
     </div>
    
